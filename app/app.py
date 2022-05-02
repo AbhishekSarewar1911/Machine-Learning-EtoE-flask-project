@@ -212,6 +212,18 @@ def about():
 
     return render_template('about.html', title=title)
 
+@ app.route('/contact us')
+def contact():
+    title = 'Contact us - Info'
+
+    return render_template('contact.html', title=title)
+
+@ app.route('/compare')
+def compare():
+    title = 'Compare graph'
+
+    return render_template('compare.html', title=title)
+
 # render disease prediction input page
 
 
