@@ -2,7 +2,8 @@ html,
 body {
     margin: 0;
     font-size: 100%;
-    background: #fff;
+    /* background: #fff; */
+	background: #c7e9c8c4;
 	font-family: 'Thasadith', sans-serif;
 }
 
