@@ -368,7 +368,7 @@ li > a:only-child:after { content: ''; }
 
 /* banner style */
 .banner_w3lspvt {
-    position: relative;
+    /* position: relative; */
     z-index: 1;
 }
 
@@ -418,7 +418,8 @@ li > a:only-child:after { content: ''; }
 }
 
 .w3layouts-banner-info {
-    padding-top: 16em;
+    /* padding-top: 16em; */
+	padding-top: 12em;
 }
 
 .w3layouts-banner-info h3 {

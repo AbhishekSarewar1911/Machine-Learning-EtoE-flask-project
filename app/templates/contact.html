@@ -66,23 +66,24 @@
                             <h3>
                                <span id="confirm">
                             </h3>
-
+                            <form method="post" action="{{ url_for('contact') }}">
                             <p>Name *</p>
-                            <input id="txt_name" type="text" Required="required">
+                            <input id="txt_name" type="text" name="Name" Required="required">
 
                             <p>Email *</p>
-                            <input id="txt_email" type="text" Required="required">
+                            <input id="txt_email" type="text" name="Email" Required="required">
 
                             <p>Phone *</p>
-                            <input id="txt_phone" type="text" Required="required">
+                            <input id="txt_phone" type="text" pattern="[6789][0-9]{9}" name="Phone" Required="required">
 
                             <p>Subject *</p>
-                            <input id="txt_subject" type="text" Required="required">
+                            <input id="txt_subject" type="text" name="Subject" Required="required">
 
                             <p>Message *</p>
-                            <textarea id="txt_message" rows="4" cols="20" Required="required" ></textarea>
+                            <textarea id="txt_message" rows="4" cols="20" name="Msg" Required="required" ></textarea>
                             
                             <input type="submit" id="btn_send" value="SEND">
+                            </form>
                         </div>
                     </div>
                 </div>

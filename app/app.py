@@ -182,7 +182,7 @@ def checklogin():
         elif count>1:
             return "More than one user"
         else:
-            return render_template("/register")
+            return render_template("register.html")
     mydb.commit()
     mycursor.close()
 
@@ -206,16 +206,35 @@ def registerpage():
         return redirect("/login")
     return render_template("Register.html")
 
-@ app.route('/about us')
+
+@ app.route('/about_us')
 def about():
     title = 'About us - Info'
 
     return render_template('about.html', title=title)
 
-@ app.route('/contact us')
+@ app.route('/contact_us', methods= ["GET", "POST"])
 def contact():
     title = 'Contact us - Info'
-
+    mydb=mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="login"
+    )
+    mycursor=mydb.cursor()
+    if request.method=='POST':
+        contactup=request.form
+        N=contactup['Name']
+        EML=contactup['Email']
+        PH=contactup['Phone']
+        SUB=contactup['Subject']
+        MSG=contactup['Msg']
+        mycursor.execute("insert into contactus (Name,Email,Phone,Subject,Message)values(%s,%s,%s,%s,%s)",(N,EML,PH,SUB,MSG))
+        mydb.commit()
+        mycursor.close()
+        return redirect("/login")
+    # return render_template("Register.html")
     return render_template('contact.html', title=title)
 
 @ app.route('/compare')
